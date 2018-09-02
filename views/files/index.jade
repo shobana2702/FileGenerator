@@ -1,0 +1,26 @@
+extend ../layout
+
+block content
+   h1.header Products
+   table.table.table-bordered
+       tr.row-heading
+           td ID
+           td TITLE
+           td PRICE
+           td STOCK
+           td EDIT
+           td DELETE
+        each product in products
+           tr 
+              td=product.id
+              td=product.title
+              td=product.price
+              if product.stock===0
+               td NO STOCK
+              else
+               td=product.stock
+              td 
+                a(href=`/products/edit/${product.id}`) EDIT
+              td 
+                a(href=`/products/delete1/${product.id}`) DELETE
+                  

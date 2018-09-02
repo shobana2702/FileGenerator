@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    if error
+        p.error= error
+    else
+        p.success=success
+    form(method='post', name='generate-file')
+    
+       .form-group
+           label(for='id') Id:
+           input#title.form-control(type='number', name="id" value="")
+       .form-group
+           label(for='range1') Range 1:
+           input#range1.form-control(type='number', name="range1",width="50%", value="")
+       .form-group
+           label(for='range2') Range 2:
+           input#range2.form-control(type='number', name="range2" value="")
+        .form-group
+           label(for='range3') Range 3:
+           input#range3.form-control(type='number', name="range3" value="")
+       .form-group
+           label(for='range4') Range 4:
+           input#range4.form-control(type='number', name="range4" value="")   
+       button.btn.btn-success(type='submit') Generate
+
+       
